@@ -34,7 +34,7 @@ router.use('/',notLoggedIn,function(req,res,next){
 
 router.get('/signup',function(req,res,next){
   var messages = req.flash('error');
-	res.render('USERs/signup',{csrfToken: req.csrfToken(),messages: messages, hasErrors: messages.length>0});
+	res.render('USERS/signup',{csrfToken: req.csrfToken(),messages: messages, hasErrors: messages.length>0});
 });
 
 router.post('/signup', passport.authenticate('local.signup',{
@@ -68,7 +68,7 @@ function(req,res,next){
       req.session.oldUrl = null;
       res.redirect(oldUrl);
     }else {
-      res.redirect('/USERS/profile');
+      res.redirect('/admin');
     }
 }
 );

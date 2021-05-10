@@ -18,7 +18,7 @@ var USERSRoutes = require('./routes/USERS');
 
 var app = express();
 //
-mongoose.connect('mongodb+srv://dinhvan:kQOxD6rPs6Tqinv3a@cluster0.rd0ho.mongodb.net/Eatcake?retryWrites=true&w=majority',{useNewUrlParser: true});
+mongoose.connect('mongodb+srv://dinhvan:kQOxD6rPs6Tqinv3a@cluster0.rd0ho.mongodb.net/Eatcake?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true });
 require('./config/passport');
 
 // view engine setup

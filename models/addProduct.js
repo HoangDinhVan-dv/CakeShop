@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var addProductschema = new Schema({
-	category: {
+	Type: {
 		type: String,
 		required: true
 	},
@@ -24,4 +24,4 @@ var addProductschema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('AddProduct', addProductschema);
+module.exports = mongoose.model('AddProduct', addProductschema, 'cakes');

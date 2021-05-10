@@ -5,6 +5,7 @@ var Cart = require('../models/cart');
 var Product = require('../models/product');
 var AddProduct = require('../models/addProduct');
 
+var AddProduct2 = require('../models/addProduct2');
 var Mobile  = require('../models/mobile');
 var Cake = require('../models/cake');
 var Tera = require('../models/tera');
@@ -224,7 +225,7 @@ router.get('/add-a-product',function(req,res,next){
 
 router.post('/add-a-product',function(req,res,next){
     var addproduct = new AddProduct({
-        category: req.body.category,
+        Type: req.body.Type,
         title: req.body.title,
         imagePath: req.body.imagePath,
         price: req.body.price,
@@ -235,6 +236,23 @@ router.post('/add-a-product',function(req,res,next){
     });
 });
 
+router.get('/add-a-product2',function(req,res,next){
+  res.render('shop/add-a-product2');
+});
+
+
+router.post('/add-a-product2',function(req,res,next){
+  var addproduct2 = new AddProduct2({
+      Type: req.body.Type,
+      title: req.body.title,
+      imagePath: req.body.imagePath,
+      price: req.body.price,
+      description: req.body.description
+  });
+  addproduct2.save(function(err,result){
+      res.redirect('/user/profile');
+  });
+});
 
 router.get('/checkout',isLoggedIn, function(req,res,next){
     if(!req.session.cart) {
@@ -281,7 +299,7 @@ router.post('/checkout',isLoggedIn,function(req,res,next){
 });
 //update 
 
-router.post('/categories/updatepro', (req,res,next)=>{
+router.post('/categories/updatepro', (req,res)=>{
   var cakId=req.body.cakId
   var Type =req.body.Type
     var title= req.body.title
