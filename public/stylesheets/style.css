@@ -1,0 +1,33 @@
+body {
+  	font: 16px "Spectral", Helvetica, Arial, sans-serif;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail img {
+	max-height: 250px;
+}
+.thumbnail .description {
+	color: #7f7f7f;
+}
+
+.price {
+	font-weight:bold;
+	font-size: 16px;
+}
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+
+
+
+
+
+

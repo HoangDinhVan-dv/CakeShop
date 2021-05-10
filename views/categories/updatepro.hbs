@@ -1,0 +1,32 @@
+ <div class="container">
+ <form action="/categories/updatepro" method="post" id="product-form">
+ <input value="{{this.cak.id}}" type="hidden" id="name" class="form-control" required name="cakId">
+ 
+   <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Title</label>
+                        <input type="text" id="name" class="form-control" required name="title">
+                    </div>
+   </div>
+   <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Image-Link</label>
+                        <input type="text" id="name" class="form-control" required name="imagePath">
+                    </div>
+   </div>
+   <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Price</label>
+                        <input type="text" id="name" class="form-control" required name="price">
+                    </div>
+   </div>
+   <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Description</label>
+                        <input type="text" id="name" class="form-control" required name="description">
+                    </div>
+   </div>
+</div>
+  <button type="submit" class="btn btn-block">Add Product</button>
+</form>
+</div>
