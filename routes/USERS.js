@@ -10,7 +10,7 @@ router.use(csrfProtection);
 
 router.get('/profile',isLoggedIn, function(req,res,next){
   var successMsg = req.flash('success')[0];
-    Order.find({USERS: req.USERS},function(err, orders){
+  Order.find({USERS: req.USERS},function(err, orders){
         if(err){
           return res.write('Error!');
         }

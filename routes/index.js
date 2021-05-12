@@ -128,29 +128,16 @@ router.get('/add-to-cart/:id', function(req,res,next){
     });
 });
 
-router.get('/add-to-cart2/:id', function(req,res,next){
-    var productsId = req.params.id;
-    var cart = new Cart(req.session.cart ? req.session.cart: {});
-    //var cartnew = new Cart(req.session.cart ? req.session.cart: {});
-   Product.findById(productsId, function(err, product){
-      if (err){
-         return res.redirect('/');
-      }
-      cart.add(product, product.id);
-      req.session.cart = cart;
-      console.log(req.session.cart);
-      res.redirect('/categories/game');
-    });
- });
+
 router.get('/add-to-cart3/:id', function(req,res,next){
     var productsId = req.params.id;
     var cart = new Cart(req.session.cart ? req.session.cart: {});
     //var cartnew = new Cart(req.session.cart ? req.session.cart: {});
-   Tera.findById(productsId, function(err, electronic){
+   Tera.findById(productsId, function(err, tera){
       if (err){
          return res.redirect('/');
       }
-      cart.add(Tera, tera.id);
+      cart.add(tera, tera.id);
       req.session.cart = cart;
       console.log(req.session.cart);
       res.redirect('/categories/tera');
@@ -345,6 +332,7 @@ function isLoggedIn(req,res,next){
   req.session.oldUrl = req.url;
   res.redirect('/user/signin');
 }
+
 function isLoggedIn(req,res,next){
   if(req.isAuthenticated()){
     return next();
